@@ -6,7 +6,7 @@ import time
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-torchmodel = torch.jit.load("best.torchscript", map_location=device)
+torchmodel = torch.jit.load("../best.torchscript", map_location=device)
 torchmodel.eval()
 
 def preprocess_image(image_ori) -> torch.Tensor:
@@ -28,7 +28,7 @@ def greet(name, intensity):
     return "Hello, " + name + "!" * int(intensity)
 
 def run_video():
-    cap = cv2.VideoCapture("evaluation.mp4")
+    cap = cv2.VideoCapture("../evaluation.mp4")
     postprocessor = PostProcess.PostProcessor()
 
     with torch.no_grad():

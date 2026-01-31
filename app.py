@@ -24,9 +24,6 @@ def run_model(image):
     end_time = time.time()
     return result, (end_time - start_time) * 1000
 
-def greet(name, intensity):
-    return "Hello, " + name + "!" * int(intensity)
-
 def run_video():
     cap = cv2.VideoCapture("evaluation.mp4")
     postprocessor = PostProcess.PostProcessor()
